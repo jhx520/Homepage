@@ -33,6 +33,61 @@
 *{margin:0;padding:0}body{font:400 16px/1.62 "Microsoft JhengHei", sans-serif;color:#535353;overflow:hidden}.willerce{text-align:center;margin:100px auto auto auto;max-width:500px;padding:0 20px}.willerce a{color:#535353;text-decoration:underline}.willerce a:link,.willerce a:visited{text-decoration:underline}h1{font-size:26px;color:#424242;margin-bottom:20px}.avatar{border-radius:64px;}.nav a{padding:0 6px 0 6px}@keyframes fade-in{0%{opacity:0}40%{opacity:0}100%{opacity:1}}@-webkit-keyframes fade-in{0%{opacity:0}40%{opacity:0}100%{opacity:1}}.willerce{animation:fade-in;animation-duration:1s;-webkit-animation:fade-in 1s}
 .sydlogo{position:relative;width:128px;height:128px;margin:0 auto;margin-bottom:35px;}
 .zjgx {position:absolute;background:#f00;font-size:16px;height:40px;width:40px;line-height:40px;text-align:center;top:0px;right:0px;border-radius:20px;color:#fff;}
+.donate
+    {animation: contentSlipToUp 2s;
+        position:absolute;top:20%;
+        z-index:999;min-height:300px;background:#fff;
+        width:80%;left:10%;display:none;border: 1px solid rgba(0,0,0,.2);border-radius: .3rem;box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,.5);          
+    }
+    .donate h3
+    {
+        line-height:30px;padding-left: 15px;font-size:16px;font-family:"Microsoft YaHei";
+        margin-top:10px;padding-bottom:5px;
+    }
+    .donate h3 span
+    {
+        float:right;margin-right:30px;font-size:16px;cursor:pointer;color:#776b6b;
+        border:1px solid #ACACAC;padding:0;text-indent:0;height:20px;width:20px;
+        text-align:center;margin-top:5px;line-height:20px;border-radius:4px;background:#EEE;
+    }
+    .donate h3 span:hover{color:#999;border-color:#CCC;}
+    .donate table{color:#666;font-family:"Microsoft YaHei";margin-left:2em;}
+    .donate table tr{}
+    .donate table td{}
+    .donate table .input{padding-top:4px;}
+    .donate table .label{padding-left:5px;padding-right:10px;}
+    .donate img
+    {border: 1px solid #e8dada;height:350px;margin:0 auto;
+        display:block;margin-top:20px;color:#999;border-radius:4px;padding:5px;margin-bottom: 50px;
+    }
+    @media (min-width: 375px) 
+    {
+        .donate{width:80%;left:10%;}
+    }
+    @media (min-width: 768px) 
+    {
+        .donate{width:32%;left:30%;}
+    }
+    @media (min-width: 992px) 
+    {
+        .donate{width:24%;left:35%;} 
+    }
+     @keyframes contentSlipToUp  {
+            0%{
+                -webkit-transform: rotateX(90deg);
+                -moz-transform: rotateX(90deg);
+                -ms-transform: rotateX(90deg);
+                -o-transform: rotateX(90deg);
+                transform: rotateX(90deg);
+            }
+            100%{
+                -webkit-transform: rotateX(0deg);
+                -moz-transform: rotateX(0deg);
+                -ms-transform: rotateX(0deg);
+                -o-transform: rotateX(0deg);
+                transform: rotateX(0deg);
+            }
+        }
 </style>
 <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="33f4fcc2-b2c6-4c3b-9aeb-209fab815e67";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </head>
@@ -48,10 +103,15 @@
 	<a href="" aria-current="page">首页</a>
 <a href="https://coldzera.ml/">杂记</a>
 <a href="https://zeracloud.herokuapp.com/">储物间</a>
-<a href="http://lpssxs.cf/">学术墙</a>
+<a rel="nofollow" href="javascript:void(0);" id="donate_open">学术墙</a>
 <a href="">联系我</a>
 </p>
 </div>
+
+<div id="donate" class="donate">
+        <h3><i class="fa fa-qrcode"></i><a href="http://lpssxs.cf">lpssxs.cf</a><span id="donate_close" title="关闭">×</span></h3>
+        <img src="https://i.loli.net/2019/04/17/5cb6a4d8c68c1.jpg" id="donate_code"/>            
+    </div>
 <!--关灯-->
 <link rel="stylesheet" href="css/style.css">
 <div class="switch-wrapper">
@@ -137,4 +197,8 @@ window.onload = bgChange;
     </script>
 <script src='js/jquery.min.js'></script>
 <script src="js/index.js"></script>
+<script>
+    document.getElementById('donate_open').onclick=function(){document.getElementById('donate').style.display = 'block'}
+    document.getElementById('donate_close').onclick=function(){document.getElementById('donate').style.display = 'none'}
+</script>
 </body></html>
